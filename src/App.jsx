@@ -7,15 +7,16 @@ function App() {
   const [blurRadius, setBlurRadius] = useState(2)
   const [blurSpread, setBlurSpread] = useState(2)
   const [color, setColor] = useState('#a19b9b')
-  const shadow=`${offsetX}px ${offsetY}px ${blurRadius}px ${blurSpread}px ${color}`
+  const shadow = `${offsetX}px ${offsetY}px ${blurRadius}px ${blurSpread}px ${color}`
   const [cssValue, setCssValue] = useState(shadow)
-
-
-useEffect(()=>{
-setCssValue(shadow)
-})
+  useEffect(() => {
+    setCssValue(shadow)
+  })
   return (
-    <div className='App'  style={{boxShadow:shadow}}>
+    <div
+      className='App'
+      style={{ boxShadow: shadow }}
+    >
       <InputRange
         className={'offset-x'}
         label={'Offset X'}
